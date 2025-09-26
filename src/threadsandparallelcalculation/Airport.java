@@ -45,6 +45,15 @@ public class Airport {
 
 	public  void decrease() {
 		// reducir el valor de la variable de counter por 1
+		/*
+		 * candado o llave, en ingles lock
+		 * cualquier hilo para poder acceder a un trozo de codigo
+		 * sincronizando, tiene que obtener primero un candado para
+		 * el acceso, al obtener el  candado ningun otro puede ácceder 
+		 * el mismo codigo hasta que el hilo que ocupa el candado lo haya libera .
+		 * En este caso el candado es el objeto de airport que hemos creado 
+		 * 
+		 */
 		synchronized (this) {
 			counter--;	
 		}
