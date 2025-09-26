@@ -10,8 +10,7 @@ public class OperatorTest {
 	public static void main(String[] args) {
 		aritmeticOperations();
 		// declaring three variables of the same type
-		aritmeticOperations();
-		aritmeticOperations();
+		
 	}
 
 	/**
