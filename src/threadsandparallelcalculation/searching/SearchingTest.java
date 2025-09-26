@@ -32,8 +32,8 @@ public class SearchingTest {
 			clients[i] = new User(i, "aday" + i, true, "lolo" + i, 1.7f, "male" + i, 20);
 		}
 		 for (int i = 0; i < clients.length; i++) {
-			if (clients[i] getname() == targetNamet) {
-					sysot
+			if (clients[i]. getName() == targetName) {
+					System.out.println();
 			}
 		 
 		 }
