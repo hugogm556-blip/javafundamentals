@@ -3,8 +3,6 @@
  */
 package threadsandparallelcalculation;
 
-import java.util.Iterator;
-
 /**
  * @author hugog16 sept 2025
  */
