@@ -1,6 +1,7 @@
 package datastructure;
 
-import java.util.Iterator;
+import java.util.Arrays;
+
 
 public class ArrayTest {
 	public static void main(String[] args) {
@@ -8,18 +9,43 @@ public class ArrayTest {
 		// establecer un valor a una variable
 		System.out.println(1 == 1);
 
-		int[] numbers = { 12, 123123, 435 };
+		int[] numbers = { 12, 123123, 435,678,367 };
 
 		// array
 		sumup(numbers);
 		findMaxMix(numbers);
+		switchValues(numbers, 0, 4);
+		// 0  y 4 son las posicioines 
+		// swich values cambia la posicion 
+		reverse(numbers);
 		// crea dos objetos de usuario
+		createObject();
+	}
+	/**
+	 * 
+	 */
+	private static void reverse(int[]arr) {
+		for (int i = arr.length -1; i < arr.length; i--) {
+			int temp =arr[i];
+			// sustituye el elemento en  posicion i con el elemento en posicion j
+			arr[i]= arr[0];
+			
+			// asigna el elemento guardado en la variable "num" a pla posicion j del array
+			arr[i] = temp;
+			System.out.println(temp);
+		}
+		
+	}
+	/**
+	 * 
+	 */
+	private static void createObject() {
 		User[] clients = new User[10];
 		// tiene capacidad de guardar 20000 usuarios
 		clients[0] = new User(23, "alejandroide", false, "loro", 1.5f, "male", 21);
 		clients[1] = new User(24, "aday", true, "lolo", 1.7f, "male", 20);
 
-		System.out.println(numbers.length);
+	
 
 		// Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 2
 		// out of bounds for length 2
@@ -46,6 +72,28 @@ public class ArrayTest {
 		System.out.println(users.length);
 		System.out.println(users[2]);
 
+	}
+
+		
+	
+	/**
+	 * @param numbers
+	 * @param i position i of the array 
+	 * @param j position j of the array 
+	 * int arr es una variable que guarda posiciones i y j
+	 */
+	
+	private static void switchValues(int[] arr, int i, int j) {
+		// guardar temporalmente el elemento de posicion  i en una variable 
+		int num = arr[i] ;
+	
+		// sustituye el elemento en  posicion i con el elemento en posicion j
+		arr[i]= arr[j];
+		
+		// asigna el elemento guardado en la variable "num" a pla posicion j del array
+		arr[j] = num;
+		
+		System.out.println(Arrays.toString(arr));
 	}
 
 	/**

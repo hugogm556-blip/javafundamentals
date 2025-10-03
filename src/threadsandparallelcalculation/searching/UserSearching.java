@@ -13,18 +13,20 @@ public class UserSearching implements Runnable {
 	User[] clients;
 	int begining;
 	int end;
+
 	/**
 	 * 
 	 */
-	public UserSearching(String target, User[] clients,int begining,int end) {
-		this.targetName= target;
-		this.clients=clients;
-		this.begining= begining;
+	public UserSearching(String target, User[] clients, int begining, int end) {
+		this.targetName = target;
+		this.clients = clients;
+		this.begining = begining;
 		this.end = end;
-		
+
 	}
+
 	public void run() {
-		for (int i = begining ; i < end; i++) {
+		for (int i = begining; i < end; i++) {
 			if (clients[i].getName().equals(targetName)) {
 				System.out.println(" El nombre ha sido encontrado " + clients[i].getName());
 			}
