@@ -27,8 +27,10 @@ public class UserSearching implements Runnable {
 
 	public void run() {
 		for (int i = begining; i < end; i++) {
-			if (clients[i].getName().equals(targetName)) {
+			if (clients[i] != null &&clients[i].getName().equals(targetName)) {
 				System.out.println(" El nombre ha sido encontrado " + clients[i].getName());
+				//Thread.currentThread().
+				break;
 			}
 		}
 
