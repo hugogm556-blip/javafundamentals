@@ -39,7 +39,7 @@ public class SearchingTest {
 			e.printStackTrace();
 		}
 		long endTime1 = System.currentTimeMillis();
-		System.out.println("el tiempo usado por el metodo con un solo hilo es " + (endTime1 - starTime1));
+		System.out.println("el tiempo usado por el metodo con varios hilos es " + (endTime1 - starTime1));
 
 	}
 
@@ -72,7 +72,7 @@ public class SearchingTest {
 			int index = clients.length / numOfThreads;
 
 			for (int i = 0; i < numOfThreads; i++) {
-				Thread entranceUser8 = new Thread(new UserSearching(targetName, clients, i * index, i * index + index));
+				Thread entranceUser8 = new Thread(new UserSearching(targetName, clients, i * index, i * index + index, Thread.currentThread()));
 				entranceUser8.start();
 			}
 		
