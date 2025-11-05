@@ -2,40 +2,42 @@ package datastructure;
 
 import java.util.Arrays;
 
-
 public class ArrayTest {
 	public static void main(String[] args) {
 		// ==args igualar un valor
 		// establecer un valor a una variable
 		System.out.println(1 == 1);
 
-		int[] numbers = { 12, 123123, 435,678,367 };
+		int[] numbers = { 12, 123123, 435, 678, 367 };
 
 		// array
 		sumup(numbers);
 		findMaxMix(numbers);
-		switchValues(numbers, 0, 4);
-		// 0  y 4 son las posicioines 
-		// swich values cambia la posicion 
+	 	switchValues(numbers, 0, 4);
+		// 0 y 4 son las posicioines
+		// swich values cambia la posicion
 		reverse(numbers);
 		// crea dos objetos de usuario
 		createObject();
 	}
+
 	/**
-	 * 
+	 *  
 	 */
-	private static void reverse(int[]arr) {
-		for (int i = arr.length -1; i < arr.length; i--) {
-			int temp =arr[i];
-			// sustituye el elemento en  posicion i con el elemento en posicion j
-			arr[i]= arr[0];
-			
-			// asigna el elemento guardado en la variable "num" a pla posicion j del array
-			arr[i] = temp;
-			System.out.println(temp);
+	private static void reverse(int[] arr) {
+		// se hace hasta la mitad porque si pasa de la mitad se vuelve a rehacer la lista 
+		for (int i = 0; i < arr.length / 2; i++) {
+			int temp = arr[i];
+			// cambiamos la primera posicion con el ultimo 
+			arr[i] = arr[arr.length - 1 - i];
+			// cambiamos el ultimo por el peimero 
+			arr[arr.length - 1 - i] = temp;
+
+			System.out.println(Arrays.toString(arr));
 		}
-		
+
 	}
+
 	/**
 	 * 
 	 */
@@ -44,8 +46,6 @@ public class ArrayTest {
 		// tiene capacidad de guardar 20000 usuarios
 		clients[0] = new User(23, "alejandroide", false, "loro", 1.5f, "male", 21);
 		clients[1] = new User(24, "aday", true, "lolo", 1.7f, "male", 20);
-
-	
 
 		// Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 2
 		// out of bounds for length 2
@@ -74,56 +74,54 @@ public class ArrayTest {
 
 	}
 
-		
-	
 	/**
 	 * @param numbers
-	 * @param i position i of the array 
-	 * @param j position j of the array 
-	 * int arr es una variable que guarda posiciones i y j
+	 * @param i       position i of the array
+	 * @param j       position j of the array int arr es una variable que guarda
+	 *                posiciones i y j
 	 */
-	
+
 	private static void switchValues(int[] arr, int i, int j) {
-		// guardar temporalmente el elemento de posicion  i en una variable 
-		int num = arr[i] ;
-	
-		// sustituye el elemento en  posicion i con el elemento en posicion j
-		arr[i]= arr[j];
-		
+		// guardar temporalmente el elemento de posicion i en una variable
+		int num = arr[i];
+
+		// sustituye el elemento en posicion i con el elemento en posicion j
+		arr[i] = arr[j];
+
 		// asigna el elemento guardado en la variable "num" a pla posicion j del array
 		arr[j] = num;
-		
+
 		System.out.println(Arrays.toString(arr));
 	}
 
 	/**
 	 * find the maximun and minimun value in the array
+	 * 
 	 * @param numbers
 	 */
 	private static void findMaxMix(int[] numbers) {
 		// TODO Auto-generated method stub
-		int max= numbers [0];
-		int min= numbers [numbers.length -1]; 
-	
-		for (int i = 0; i < numbers.length ; i++) {
-			// si max es mayor que dato actual que hemos cogido 
+		int max = numbers[0];
+		int min = numbers[numbers.length - 1];
+
+		for (int i = 0; i < numbers.length; i++) {
+			// si max es mayor que dato actual que hemos cogido
 			// numero[i]
 			/*
-			 * si max es mmenor que el numbers[i] ser cambia el numero mayor 
-			 * de numbers a el maximo numero 
+			 * si max es mmenor que el numbers[i] ser cambia el numero mayor de numbers a el
+			 * maximo numero
 			 */
 			if (min > numbers[i]) {
 				min = numbers[i];
-				System.out.println("el min es " + min); 
+				System.out.println("el min es " + min);
 			}
 			if (max < numbers[i]) {
 				max = numbers[i];
 				System.out.println("el max es " + max);
-				
-		
+
 			}
 		}
-	
+
 	}
 
 	/**
