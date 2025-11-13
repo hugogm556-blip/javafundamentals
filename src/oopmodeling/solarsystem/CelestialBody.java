@@ -1,5 +1,8 @@
 package oopmodeling.solarsystem;
-
+/**
+ * 
+ * @author hugog13 nov 2025
+ */
 public class CelestialBody {
 	// se pueden acceder directamente desde cualquier sitio
 	public float garvity = 55555555555555555.5555555555555555f;
@@ -12,6 +15,21 @@ public class CelestialBody {
 	String name = "unknown ";
 	float radius = 234234;
 	int age = 3264346;
+	
+	// constructores 
+	// constructor vacio
+	public CelestialBody() {};
+	// constructor con un parametro 
+	public CelestialBody(String name) {
+		this.name= name;
+	};
+	// constructor con varios paramatros 
+	public CelestialBody(String name,float radius) {
+		this.name= name;
+		this.radius=radius;
+	};
+	
+	
 	public static float minimun_size=324534.6f;
 	public float getGarvity() {
 		return garvity;
