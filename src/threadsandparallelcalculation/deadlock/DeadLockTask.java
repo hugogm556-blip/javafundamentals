@@ -8,6 +8,23 @@ import java.time.Duration;
 /**
  * @author hugog11 nov 2025
  */
+/**
+ *  como sucede el deadlock : 
+ *  1 se genera en un entorno distribuido o concurrente
+ *  2 se ocurre si tenemos multiples locks en el mismo contexto o entorno 
+ *  3 cuando accedemos un recurso compartido protegido por multiples locks y empleamos los locks 
+ *  en diferente orden
+ *  
+ * como solucionar deadlock: 
+ * 
+ * tenemos que emplear los locks siempre en
+ * el mismo orden  en toda la aplicacion 
+
+
+ */
+
+
+
 public class DeadLockTask {
 // cualquier instancia de una clase se puede usar como un lock para
 	// proteger recursos compartidos
